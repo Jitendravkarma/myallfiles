@@ -1,0 +1,25 @@
+viewer url : http://jsonviewer.stack.hu/
+
+json api url : 
+
+-> https://jsonplaceholder.typicode.com/ 
+
+-> https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/
+
+------------------------------------------------------
+
+JSON : It stands for Javascript object notation , it is light weight process to handle data. 
+
+key points :-
+
+-> String formatted notation of JS object is JSON
+-> It is used to transfer bulk amount of content from one application end to another(web-web , web-mobile)
+-> Almost all technology supports JSON formats
+-> Each technology comes with functions to create & to handle JSON response
+
+JSON.stringify(object) : To convert JS object notation to JS object string notation(JSON)
+
+JSON.parse(object) : To convert JS object string notation(JSON) to JS object notation       
+
+
+

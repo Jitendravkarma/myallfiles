@@ -1,0 +1,19 @@
+Synchronous or Blocking function and Asynchronous or Non-blocking function :- Function classification on the basis of its working style 
+
+-> Synchronous or Blocking function : Those function which on execution will restrict further code from execution , untill its self execution gets completed are synchronous or blocking function.
+
+-> Asynchronous or Non-Blocking function : Those function which on execution will not restrict further code from execution are asynchronous or non-blocking function.
+
+Note : * All function are by default synchronous in nature , to deploy them asynchronously additional feature is to be added
+
+* Maximum times callback are implemented asynchronous in nature 
+
+----------
+---------- p1
+----------
+   | |	
+   | |	p2 (function calling & defination) 
+   | |	
+----------
+---------- p3
+----------
