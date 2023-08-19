@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 20px;
+			font-family: arial;
+			text-align: center;
+		}
+		table {
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	var ary = [
+		{'fname':'Asif','marks':{'Hindi':90,'English':80,'Maths':90,'Physics':70,'Chemistry':80}},
+		{'fname':'Rajendra','marks':{'Hindi':40,'English':20,'Maths':50,'Physics':20,'Chemistry':30}},
+		{'fname':'Mukesh','marks':{'Hindi':10,'English':30,'Maths':60,'Physics':40,'Chemistry':70}},
+		{'fname':'Veer','marks':{'Hindi':60,'English':70,'Maths':60,'Physics':100,'Chemistry':10}}
+	];
+	let total = 0;
+	let name = 'Asif';
+	let ave = 0;
+	let flag = 0;
+	let f = 0;
+	let len = 0;
+	document.write('<table border="1" cellspading="10" cellpadding="10">')
+	ary.map((obj)=>{
+		if (obj.fname == name) {
+			Object.keys(obj.marks).map((k)=>{
+				if (obj.marks[k] > 100) {
+					document.write(obj.fname+"'s "+k+' marsk is out of range of 100.'+'<br>');
+					f = 1;
+				}
+				document.write('<tr>');
+				document.write('<td>'+k+'</td>'+'<td>'+obj.marks[k]+'</td>');
+				total += obj.marks[k];
+				ave = total/5;
+				flag = 1;
+			});
+			document.write('</tr>');
+		}
+	});
+	document.write('</table>')
+	document.write('<br>');
+	if (flag) {
+		if (f==0) {
+			if (ave < 33) {
+				document.write(name +' total marks is '+ total+ ' out of 500 and percentage is '+ ave+'<br>');
+				document.write('Result:- Failed');
+			}
+			else if (ave < 60) {
+				document.write(name +' total marks is '+ total+ ' out of 500 and percentage is '+ ave+'<br>');
+				document.write('Result:- Passed');
+			}
+			else if (ave < 80) {
+				document.write(name +' total marks is '+ total+ ' out of 500 and percentage is '+ ave+'<br>');
+				document.write('Result:- Passed with first division');
+			}
+			else if (ave <= 100) {
+				document.write(name +' total marks is '+ total+ ' out of 500 and percentage is '+ ave+'<br>');
+				document.write('Result:- Congratulation! you are in the merit list.');
+			}
+		}
+	}
+	else {
+		if (name.charAt() == name.charAt().toLowerCase()) {
+			document.write('Please enter capitalized name like: John, Ram');
+		}
+		else if (name == '' || name >= 0) {
+			document.write('name is invalid do not use blank or numerial number');
+		}
+		else {
+			document.write(name +' named student is does not exist in our data.');
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

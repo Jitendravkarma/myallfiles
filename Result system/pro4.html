@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result access of each student by for in and for loop</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 20px;
+			font-family: arial;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	var ary = [
+		{'fname':'Ritvik','marks':[90, 80, 70, 60, 50]},
+		{'fname':'Mukesh','marks':[70, 30, 90, 50, 300]},
+		{'fname':'Rajendra','marks':[90, 90, 90, 90, 90]},
+		{'fname':'Asif','marks':[60, 50, 70, 90, 20]}
+	];
+	let name = 'Rajendra';
+	let ave = 0;
+	var total1 = 0;
+	var flag = 0;
+	var f = 0;
+	//access total marks of given named student;
+	for(let i in ary){
+		for(let j = 0; j < ary[i].marks.length; j++){
+			if (ary[i].fname == name) {
+				if (ary[i].marks[j] > 100) {
+					document.write(`${ary[i].fname} your result is under process because your marks submitted by our developer is invalid on index no ${j}`);
+					f = 1;
+				}
+				total1 += ary[i].marks[j];
+				ave = total1/ary[i].marks.length;
+				flag = 1;
+			}
+		}
+	}
+	if (flag) {
+		if (f==0) {
+			if (ave < 33) {
+				document.write(`${name} marks is ${total1} and percentage is ${ave} <br>`);
+				document.write(`Result is:- Failed<br>`);
+			}
+			else if (ave < 60) {
+				document.write(`${name} marks is ${total1} and percentage is ${ave} <br>`);
+				document.write(`Result is:- Passed<br>`);
+			}
+			else if (ave < 80) {
+				document.write(`${name} marks is ${total1} and percentage is ${ave} <br>`);
+				document.write(`Result is:- Passed with first division<br>`);
+			}
+			else if (ave <= 100) {
+				document.write(`${name} marks is ${total1} and percentage is ${ave} <br>`);
+				document.write(`Result is:- Congratulation! you are in merit list<br>`);
+			}
+		}
+	}
+	else {
+		alert(`${name} named student is doesn't exist in our data..`);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

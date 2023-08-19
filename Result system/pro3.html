@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>access total marks of all students</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 20px;
+			font-family: arial;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	var ary = [
+		{'fname':'Ritvik','marks':[90, 80, 70, 60, 50]},
+		{'fname':'Mukesh','marks':[70, 30, 90, 50, 30]},
+		{'fname':'Rajendra','marks':[90, 90, 90, 90, 90]},
+		{'fname':'Asif','marks':[60, 50, 70, 90, 20]}
+	];
+	var total1 = 0;
+	var total2 = 0;
+	//access total marks of all students;
+	for(let i in ary){
+		for(let j = 0; j < ary[i].marks.length; j++){
+			total1 += ary[i].marks[j];
+		}
+	}
+	document.write('Total marks of all students '+total1+'<br>');
+
+
+	//access total marks of all students;
+	ary.map((obj)=>{
+		for(let i = 0; i < obj.marks.length; i++){
+			total2 += obj.marks[i];
+		}
+	});
+	document.write('Total marks of all students '+total2+'<br>');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result access of each student by map function</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 20px;
+			font-family: arial;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	let ary = [
+		{'fname':'Ritvik','marks':[90, 80, 70, 60, 50]},
+		{'fname':'Mukesh','marks':[70, 30, 90, 50, 30]},
+		{'fname':'Rajendra','marks':[90, 90, 90, 90, 90]},
+		{'fname':'Asif','marks':[60, 50, 70, 90, 20]}
+	];
+	let name = 'Rajendr';
+	let total = 0;
+	let s1 = '';
+	let s2 = '';
+	let flag = 0;
+	let f = 0;
+	ary.map((obj)=>{
+		for(let i = 0; i < obj.marks.length; i++){
+			if (obj.fname == name) {
+				total += obj.marks[i];
+				var ave = total/obj.marks.length;
+				if (obj.marks[i] > 100) {
+					document.write(obj.fname +' marks is invalid on index no '+ i);
+					f = 1;
+				}
+				if (ave < 33) {
+					s1 = obj.fname +' total marks is '+ total +' and percentage is '+ ave +'<br>';
+					s2 = 'Result is:- Failed';
+				}
+				else if (ave < 60) {
+					s1 = obj.fname +' total marks is '+ total +' and percentage is '+ ave +'<br>';
+					s2 = 'Result is:- Passed';
+				}
+				else if (ave < 80) {
+					s1 = obj.fname +' total marks is '+ total +' and percentage is '+ ave +'<br>';
+					s2 = 'Result is:- Passed with first division';
+				}
+				else if (ave <= 100) {
+					s1 = obj.fname +' total marks is '+ total +' and percentage is '+ ave +'<br>';
+					s2 = 'Result is:- Congratulation! you are in the merit list';
+				}
+				flag = 1;
+			}
+		}
+	});
+	if (flag) {
+		if (f==0) {
+			document.write(s1);
+			document.write(s2);
+		}
+	}
+	else {
+		document.write(name +' named student is does not exist in our data.');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

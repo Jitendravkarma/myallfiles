@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>marks accessing</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 20px;
+			font-family: arial;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	var ary = [
+		{'fname':'Ritvik','marks':[90, 80, 70, 60, 50]},
+		{'fname':'Mukesh','marks':[70, 30, 90, 50, 30]},
+		{'fname':'Rajendra','marks':[90, 90, 90, 90, 90]},
+		{'fname':'Asif','marks':[60, 50, 70, 90, 20]}
+	];
+
+	//marks access by for in and for loop
+	for(let i in ary){
+		for(let j = 0; j < ary[i].marks.length; j++){
+			document.write(ary[i].marks[j]+' ');
+		}
+		document.write('<br>')
+	}
+
+	//marks access by map function
+	document.write('<br><br>')
+	ary.map((obj)=>{
+		for(let i = 0; i < obj.marks.length; i++){
+			document.write(obj.marks[i]+' ');
+		}
+		document.write('<br>')
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
