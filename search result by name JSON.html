@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	var students = [
+		{'fname':'Jeet','marks':[90, 90, 70, 60, 800]},
+		{'fname':'Mukesh','marks':[60, 50, 60, 80, 10]},
+		{'fname':'Shyam','marks':[65, 50, 67, 80, 100]},
+		{'fname':'John','marks':[75, 50, 90, 80, 90]},
+		{'fname':'Jarvis','marks':[30, 85, 60, 80, 101]}
+	];
+	var total = 0;
+	var name = 'Jeet';
+	var s1 = '';
+	var s2 = '';
+	var flag = 0;
+	var f = 0;
+	students.map((each)=>{
+		for(let i = 0; i < each.marks.length; i++){
+			if (each.fname == name) {
+				if (each.marks[i] > 100) {
+					console.log(`${each.fname} marks is out of range of 100 change on index no ${i}`);
+					f = 1;
+				}
+				total += each.marks[i];
+				var ave = total/each.marks.length;
+				if (ave < 33) {
+					s1 = `${each.fname} marks is ${total} and percentage is ${ave}.`;
+					s2 = `${each.fname} student is failed`;
+				}
+				else if (ave < 60) {
+					s1 = `${each.fname} marks is ${total} and percentage is ${ave}.`;
+					s2 = `${each.fname} student is passed`;
+				}
+				else if (ave < 80) {
+					s1 = `${each.fname} marks is ${total} and percentage is ${ave}.`;
+					s2 = `${each.fname} student is passed with first division`;
+				}
+				else if (ave <= 100) {
+					s1 = `${each.fname} marks is ${total} and percentage is ${ave}.`;
+					s2 = `${each.fname} student is in merit list`;
+				}
+				flag = 1;
+			}
+		}
+	});
+	if (flag) {
+		if (f==0) {
+			console.log(s1);
+			console.log(s2);
+		}
+	}
+	else {
+		console.log(`${name} student is not exist in our data.`);
+	}
+
+</script>

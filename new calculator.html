@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 18px;
+		}
+		span {
+			color: red;
+		}
+		input {
+			margin: 0;
+			padding: 5px;
+			font-weight: bolder;
+			color: orange;
+			font-size: 15px;
+		}
+		table {
+			margin: auto;
+		}
+		table, td {
+			border: 1px solid;
+			border-collapse: collapse;
+		}
+		td {
+			padding: 5px;
+		}
+		button {
+			width: 20%;
+			padding: 5px;
+		}
+	</style>
+	<script>
+		function add() {
+			var a = parseInt(document.getElementById('i1').value);
+			var b = parseInt(document.getElementById('i2').value);
+			var c = a + b;
+			document.getElementById('i3').value = "Sum is: - " + c;
+		}
+		function sub() {
+			var a = parseInt(document.getElementById('i1').value);
+			var b = parseInt(document.getElementById('i2').value);
+			var c = a - b;
+			document.getElementById('i3').value = "Subtraction is: - " + c;
+		}
+		function multi() {
+			var a = parseInt(document.getElementById('i1').value);
+			var b = parseInt(document.getElementById('i2').value);
+			var c = a * b;
+			document.getElementById('i3').value = "Multiplication is: - "+c;
+		}
+		function div() {
+			var a = parseInt(document.getElementById('i1').value);
+			var b = parseInt(document.getElementById('i2').value);
+			var c = a / b;
+			document.getElementById('i3').value = c;
+		}
+	</script>
+</head>
+<body>
+	<table>
+		<form>
+			<caption>Calculator</caption>
+			<tr>
+				<td>First value</td>
+				<td>
+					<input type="text" id="i1">
+				</td>
+			</tr>
+			<tr>
+				<td>Second value</td>
+				<td>
+					<input type="text" id="i2">
+				</td>
+			</tr>
+			<tr>
+				<td>Result</td>
+				<td>
+					<input type="text" id="i3">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button type="button" onclick="add()">Add</button>
+					<button type="button" onclick="sub()">Sub</button>
+					<button type="button" onclick="multi()">Multi</button>
+					<button type="button" onclick="div()">Div</button>
+				</td>
+			</tr>
+		</form>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="js.js"></script>
+</body>
+</html>

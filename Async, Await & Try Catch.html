@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Use on Live server</title>
+	<script src="jqueryAjax.js"></script>
+</head>
+<body style="font-size: 17px">
+	<!-- <form id="formData">
+		Id:- <input type="text" id="id" autofocus/><br/>
+		Name:- <input type="text" id="name"/><br/>
+		Email:- <input type="text" id="email"/><br/>
+		Mobile:- <input type="text" id="mob"/><br/>
+		<button type="button" onclick="submitdata()">Click</button>
+	</form> -->
+	<script type="text/javascript">
+		//---------------Try and Catch-------------------
+		async function fetchdata() {
+			try{
+				const userDetails = (await fetch('user.json')).json();
+				return userDetails;
+			}
+			catch{
+				console.error(`There is an error`);
+			}
+		}
+		fetchdata().then(res=>console.log(res));
+
+		//------------Async with await fetching data short way------------
+		// async function fetchdata() {
+		// 	return (await fetch('user.json')).json();
+		// 	// const userDetails = (await fetch('user.json')).json();
+		// 	// return userDetails;
+		// }
+		// fetchdata().then(res=>console.log(res)).catch((err)=>console.log(err));
+
+		//------------Async with await fetching data long way------------
+		// async function fetchdata() {
+		// 	const response = await fetch('user.json');
+		// 	const userDetails = response.json(); // you can also use .text() url e.t.c
+		// 	return userDetails;
+		// }
+		// fetchdata().then(res=>console.log(res)).catch((err)=>console.log(err));
+
+		//-------------Async with await----------------
+		// async function test() {
+		// 	await console.log('second'); // await use krne ke bad fun ke undr wala code nahi chalega, direct bahr wala fir under wala chalega
+		// 	console.log('third');
+		// 	console.log('fourth');
+		// }
+		// console.log('first');
+		// test();
+		// console.log('fifth');
+
+
+		//------------Async fetching data short way------------
+		// async function fetchdata() {
+		// 	return $.get('user.json', resp=>resp);
+		// }
+		// fetchdata().then(resp=>console.log(resp));
+
+
+		//------------Async fetching data long way------------
+		// async function fetchdata() {
+		// 	return $.get('user.json', (resp)=>{
+		// 		return resp;
+		// 	});
+		// }
+		// fetchdata().then(resp=>console.log(resp))
+
+		//------------Async Short way----------------
+		// let nm = 1;
+		// async function pro() {
+		// 	if (nm%2==0) {
+		// 		return `${nm} is even`;
+		// 	}
+		// 	else {
+		// 		return `${nm} is odd`;
+		// 	}
+		// }
+		// pro().then(res=>document.write(res)).catch(err=>document.write(err));
+
+		// ------------Async promise method long way---------------
+		// let nm = 10;
+		// async function pro() {
+		// 	if (nm%2==0) {
+		// 		return `${nm} is even`;
+		// 	}
+		// 	else {
+		// 		return `${nm} is odd`;
+		// 	}
+		// }
+		// pro().then((res)=>{
+		// 	document.write(res);
+		// }).catch((err)=>{
+		// 	document.write(err);
+		// });
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

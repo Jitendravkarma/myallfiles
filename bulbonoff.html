@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+</head>
+<!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
+<style type="text/css">
+	body {
+		background-color: gray;
+		color: white;
+		font-size: 18px;
+	}
+	
+</style>
+<script type="text/javascript">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// function myfun() {
+	// 	let a = document.getElementById('img');
+	// 	if (a.src.match("bulbon")) {
+	// 		a.src="bulboff.png";
+	// 	}
+	// 	else {
+	// 		a.src="bulbon.jpg";
+	// 	}
+	// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	function myfun() {
+		var img = document.getElementById('img');
+		// if (img.src.match('bulbon')) {
+		// 	img.src = 'bulboff.png';
+		// }
+		// else {
+		// 	img.src = 'bulbon.jpg';
+		// }
+		if (img.src.match('bulboff')) {
+			img.src = 'bulbon.jpg';
+		}
+		else {
+			img.src = 'bulboff.png';
+		}
+	}
+
+</script>
+<body>
+	<img src="bulboff.png" width="200" onClick="myfun()" id="img">
+</body>
+</html>

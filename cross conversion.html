@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 30px;
+			text-align: center;
+			font-family: arial;
+		}
+	</style>
+	<script type="text/javascript">
+		var ch = 66;
+		var c = String.fromCharCode(ch);
+		var fu = c == c.toUpperCase() && ch >= 65 && ch <= 90;
+		var fl = c == c.toLowerCase() && ch >= 97 && ch <= 122;
+		if (fu || fl) {
+			if (fu) {
+				document.write(c +' is converted into '+ (c.toLowerCase()));
+			}
+			else if (fl) {
+				document.write(c +' is converted into '+ (c.toUpperCase()));
+			}
+		}
+
+		
+
+
+		// if (ch >= 65 && ch <= 90) {
+		// 	var check = String.fromCharCode(ch);
+		// 	if (check == check.toUpperCase()) {
+		// 		document.write(check +' is converted into small alphabet '+(check = check.toLowerCase()));
+		// 	}
+		// }
+
+		
+
+		// if (ch >= 65 && ch <= 90) {
+		// 	var c = String.fromCharCode(ch);
+		// 	if (c == c.toUpperCase()) {
+		// 		document.write(c +' is converted into small alphabet '+(c = c.toLowerCase()));
+		// 	}
+		// }
+		// else if (ch >= 90 && ch <= 122) {
+		// 	var n = String.fromCharCode(ch);
+		// 	if (n == n.toLowerCase()) {
+		// 		document.write(n +' is converted into bigger alphabet '+(n = n.toUpperCase()));
+		// 	}
+		// }
+		else {
+			alert("Invalid number");
+		}
+	</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

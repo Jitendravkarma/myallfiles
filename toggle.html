@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+</head>
+<!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
+<style type="text/css">
+	body {
+		background-color: gray;
+		color: white;
+		font-size: 18px;
+	}
+	*{
+		box-sizing: border-box;
+	}
+	.container {
+		width: 50%;
+		margin: auto;
+		padding: 10px;
+		border: 1px solid black;
+	}
+	h1, p {
+		margin: 5px 0px 5px 0px;
+	}
+	#para1 {
+		display: block;
+	}
+	p {
+		display: none;
+		transition: .4s;
+	}
+</style>
+<script type="text/javascript">
+	function fun1() {
+		let a = document.getElementById('para1');
+		let b = document.getElementById('para2');
+		let c = document.getElementById('para3');
+		if (a.style.display == "none" && b.style.display == "none" && c.style.display=="none") {
+			a.style.display = "block";
+			b.style.display ="none";
+			c.style.display ="none";
+		}
+		else {
+			a.style.display = "none";
+			b.style.display = "none";
+			c.style.display ="none";
+		}
+	}
+	function fun2() {
+		let a = document.getElementById('para1');
+		let b = document.getElementById('para2');
+		let c = document.getElementById('para3');
+		if (a.style.display == "none" && b.style.display == "block" && c.style.display=="none") {
+			a.style.display = "none";
+			b.style.display ="none";
+			c.style.display ="none";
+		}
+		else {
+			a.style.display = "none";
+			b.style.display = "block";
+			c.style.display ="none";
+		}
+	}
+	function fun3() {
+		let a = document.getElementById('para1');
+		let b = document.getElementById('para2');
+		let c = document.getElementById('para3');
+		if (a.style.display == "none" && b.style.display == "none" && c.style.display=="block") {
+			a.style.display = "none";
+			b.style.display ="none";
+			c.style.display ="none";
+		}
+		else {
+			a.style.display = "none";
+			b.style.display = "none";
+			c.style.display ="block";
+		}
+	}
+</script>
+<body>
+	<div class="container">
+		<h1><a href="#" onclick="fun1()">Heading 1</a></h1>
+		<hr>
+		<p id="para1">
+			My name is Jitendra Vishwakarma
+		</p>
+		<h1><a href="#para2" onclick="fun2()">Heading 2</a></h1>
+		<hr>
+		<p id="para2">
+			My father's name is Santosh Vishwakarma
+		</p>
+		<h1><a href="#para3" onclick="fun3()">Heading 3</a></h1>
+		<hr>
+		<p id="para3">
+			My Mother's name is Rukhmani Bai Vishwakarma
+		</p>
+	</div>
+</body>
+</html>

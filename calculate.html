@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Practice</title>
+	<script>
+		function myFun() {
+			let a = parseInt(document.getElementById('i1').value);
+			let b = parseInt(document.getElementById('i2').value);
+			let c = parseInt(document.getElementById('i3').value);
+			switch(c){
+				case 1:
+				document.getElementById('btn').value = "Add is => " + (a + b);
+				break;
+				case 2:
+				document.getElementById('btn').value = "Sub is => " +  (a - b);
+				break;
+				case 3:
+				document.getElementById('btn').value = "Multi is => " + (a * b);
+				break;
+				case 4:
+				document.getElementById('btn').value = "Div is => " + (a / b);
+				break;
+				default:
+				alert("Enter value between 1 to 4.");
+			}
+		}
+	</script>
+</head>
+<body bgcolor="gray">
+	<center>
+		<font color="white">
+			<button>1 = A + B</button>
+			<button>2 = A - B</button>
+			<button>3 = A * B</button>
+			<button>4 = A / B</button><br><br>
+			
+			A <input type="text" id="i1"><br>
+			B <input type="text" id="i2"><br>
+			C <input type="text" id="i3"><br>
+			<input type="button" onclick="myFun()" value="Save" id="btn">
+		</font>
+	</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

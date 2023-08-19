@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 30px;
+			font-family: arial;
+			margin: 10px;
+			font-weight: bold;
+		}
+	</style>
+	<script src="jquery-3.6.4.min.js"></script>
+	<script src="jquery.cycle.all.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	var ary = [
+		['Jeet',80],
+		['Raj', 50],
+		['Muku', 80]
+	];
+	var average = 0;
+	var flag = 1;
+	var res = '';
+	var tot = '';
+	for(let i in ary){
+		average += ary[i][1];
+		if (ary[i][1] > 100) {
+			alert(ary[i][0]+' marks is out of range of 100');
+			flag = 0;
+		}
+		var ave = average/ary.length;
+	}
+	if (ave < 33) {
+		tot = `Total marks is ${average} and percentage is ${ave.toFixed(2)}<br>`;
+		res = 'Fail';
+	}
+	else if (ave < 60) {
+		tot = `Total marks is ${average} and percentage is ${ave.toFixed(2)}<br>`;
+		res = 'Pass';
+	}
+	else if (ave < 70) {
+		tot = `Total marks is ${average} and percentage is ${ave.toFixed(2)}<br>`;
+		res = 'C Grade';
+	}
+	else if (ave < 80) {
+		tot = `Total marks is ${average} and percentage is ${ave.toFixed(2)}<br>`;
+		res = 'B Grade';
+	}
+	else if (ave < 90) {
+		tot = `Total marks is ${average} and percentage is ${ave.toFixed(2)}<br>`;
+		res = 'A Grade';
+	}
+	else if (ave <= 100) {
+		tot = `Total marks is ${average} and percentage is ${ave.toFixed(2)}<br>`;
+		res = 'A++';
+	}
+	if (flag) {
+		document.write(tot);
+		document.write(res);
+	}
+	else {
+		tot = 'Please enter currect marks.';
+		document.write(tot);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

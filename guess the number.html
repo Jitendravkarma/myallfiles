@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body {
+			background-color: #999;
+			color: white;
+			font-size: 30px;
+			margin: 0;
+		}
+		/*.container {
+			text-align: center;
+		}
+		.slide1, .slide2, .slide3 {
+			width: 100%;
+			height: 300px;
+			border: 1px solid;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="slide1">
+			<img src="" alt="image1">
+		</div>
+		<div class="slide2">
+			<img src="" alt="image2">
+		</div>
+		<div class="slide3">
+			<img src="" alt="image3">
+		</div>
+		<div class="btns">
+			<button><</button>
+			<button>></button>
+		</div> -->
+	</div>
+	<script type="text/javascript">
+		//-----------This is guess quiz.....
+		let a = parseInt(Math.random()*100);
+
+		let chance = 10;
+		for(let i; i != a;){
+			chance--;
+			i = prompt(`Guess any number and check you are correct or not?`);
+			alert(`You have only ${chance} chance`);
+			if (i == a) {
+				console.log(`Your guess number is correct!`);
+				console.log(`You guess the number in only ${10-chance} chance!`);
+			}
+			else if (i > a) {
+				console.log(`Your guess number is greater than the actual number!`);
+			}
+			else if (i < a) {
+				console.log(`Your guess number is smaller than the actual number!`);
+			}
+			else {
+				console.log(`Enter number between 1 to 100`);
+			}
+		}
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<script>
+//WAP to reverse array elements
+
+var ar=[10,20,30,40,50];
+document.write("<h1>Before reverse ar : "+ar+"</h1>");
+
+var l=ar.length
+for(i=0,j=l-1;i<parseInt(l/2);i++,j--)
+{
+ let temp=ar[i];
+ ar[i]=ar[j];
+ ar[j]=temp;
+}
+
+document.write("<h1>After reverse ar : "+ar+"</h1>");
+
+</script>

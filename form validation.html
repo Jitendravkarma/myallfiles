@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 18px;
+		}
+		span {
+			color: red;
+		}
+		table {
+			margin: auto;
+		}
+		table, td {
+			border: 1px solid;
+			border-collapse: collapse;
+		}
+		td {
+			padding: 5px;
+		}
+		input {
+			padding: 5px;
+		}
+		input[type=submit]{
+			opacity: .5;
+		}
+		.red {
+			color: red;
+		}
+		.green {
+			color: lightgreen;
+		}
+		#hide {
+			display: none;
+		}
+		@media (orientation: portrait){
+			table {
+				font-size: 20px;
+			}
+			td {
+				padding: 10px;
+			}
+			input {
+				padding: 10px;
+			}
+		}
+	</style>
+	<script>
+		function myFun() {
+			let fname, lname, m, f, mob, email, pass, cnfpass, z = true;
+			fname = document.getElementById('fname').value;
+			lname = document.getElementById('lname').value;
+			m = document.getElementById('m');
+			f = document.getElementById('f');
+			mob = document.getElementById('nm').value;
+			email = document.getElementById('email').value;
+			pass = document.getElementById('pwd').value;
+			cnfpass = document.getElementById('cnf').value;
+			username = /^[a-zA-Z]+$/;
+			nmVali = /^[6-9][0-9]{9}$/;
+			pwdVali = /^([a-zA-Z0-9@#$]{8,13})$/;
+			if (fname.length == "") {
+				z = false;
+				document.getElementById('s1').innerHTML = "Enter first name";
+			}
+			else if (!username.test(fname)) {
+				z = false;
+				document.getElementById('s1').innerHTML = "Only character allowed";
+			}
+			if (lname.length == "") {
+				z = false;
+				document.getElementById('s2').innerHTML = "Enter last name";
+			}
+			else if (!username.test(lname)) {
+				z = false;
+				document.getElementById('s2').innerHTML = "Only character allowed";
+			}
+			if (!(m.checked || f.checked)) {
+				z = false;
+				document.getElementById('s3').innerHTML = "Select your gender";
+			}
+			if (mob.length == "") {
+				z = false;
+				document.getElementById('s4').innerHTML = "Enter mobile number";
+			}
+			else if (!nmVali.test(mob)) {
+				z = false;
+				document.getElementById('s4').innerHTML = "Invalid mobile number";
+			}
+			if (email.length == "") {
+				z = false;
+				document.getElementById('s5').innerHTML = "Enter email address";
+			}
+			if (pass.length == "") {
+				z = false;
+				document.getElementById('s6').innerHTML = "Enter password";
+			}
+			else if (!pwdVali.test(pass)) {
+				z = false;
+				document.getElementById('s6').innerHTML = "Invalid password";
+			}
+			if (cnfpass.length == "") {
+				z = false;
+				document.getElementById('s7').innerHTML = "Enter confirm password";
+			}
+			else if (!(pass == cnfpass)) {
+				z = false;
+				document.getElementById('s7').innerHTML = "Confirm password not matched";
+			}
+			return z;
+		}
+		function clr(cln) {
+			cln.innerHTML = "";
+		}
+		function nmValidate() {
+			let a, b;
+			a = document.getElementById('nm').value;
+			b = /^[6-9][0-9]{9}$/;
+			if (isNaN(a)) {
+				document.getElementById('s4').innerHTML = "Character not allowed";
+			}
+			else if (!b.test(a)) {
+				document.getElementById('s4').innerHTML = "Invalid mobile number";
+			}
+			else {
+				document.getElementById('s4').innerHTML = "";
+			}
+		}
+		function pwdValidate() {
+			let a, b;
+			a = document.getElementById('pwd').value;
+			c = document.getElementById('cnf').value;
+			b = /^([a-zA-Z0-9@#$]{8,13})$/;
+			if (!b.test(a)) {
+				document.getElementById('s6').innerHTML = "Invalid password";
+				document.getElementById('sub').style.opacity = "0.5";
+			}
+			else if (!(a == c)) {
+				let wrg = document.getElementById('s7');
+				wrg.innerHTML = "Confirm password not matched";
+				wrg.className = "red";
+				document.getElementById('s6').innerHTML = "";
+				document.getElementById('sub').style.opacity = "0.5";
+			}
+			else {
+				let cur = document.getElementById('s7');
+				cur.innerHTML = "Confirm password matched";
+				cur.className = "green";
+				document.getElementById('s6').innerHTML = "";
+				document.getElementById('sub').style.opacity = "1";
+			}
+		}
+		function cnfValidate() {
+			let a, b;
+			a = document.getElementById('pwd').value;
+			b = document.getElementById('cnf').value;
+			if (!(a == b)) {
+				let wrg = document.getElementById('s7');
+				wrg.innerHTML = "Confirm password not matched";
+				wrg.className = "red";
+				document.getElementById('sub').style.opacity = "0.5";
+			}
+			else {
+				let cur = document.getElementById('s7');
+				cur.innerHTML = "Confirm password matched";
+				cur.className = "green";
+				document.getElementById('sub').style.opacity = "1";
+			}
+		}
+		function shw() {
+			document.getElementById('pwd').setAttribute("type","text");
+			document.getElementById('cnf').setAttribute("type","text");
+			document.getElementById('show').style.display = "none";
+			document.getElementById('hide').style.display = "inline-block";
+		}
+		function hde() {
+			document.getElementById('pwd').setAttribute("type","password");
+			document.getElementById('cnf').setAttribute("type","password");
+			document.getElementById('show').style.display = "inline-block";
+			document.getElementById('hide').style.display = "none";
+		}
+	</script>
+</head>
+<body>
+	<table>
+		<form onsubmit="return myFun()">
+			<caption>Form</caption>
+			<tr>
+				<td>
+					First Name:-
+				</td>
+				<td>
+					<input type="text" name="fname" id="fname" onkeyup="clr(s1)">
+					<span id="s1"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Last Name:-
+				</td>
+				<td>
+					<input type="text" name="lname" id="lname" onkeyup="clr(s2)">
+					<span id="s2"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Gender:-
+				</td>
+				<td>
+					<input type="radio" name="gender" id="m" onkeyup="clr(s3)" onmouseup="clr(s3)"> <label for="m">Male</label>
+					<input type="radio" name="gender" id="f" onkeyup="clr(s3)" onmouseup="clr(s3)"> <label for="f">Female</label>
+					<span id="s3"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Mobile Number:-
+				</td>
+				<td>
+					<input type="text" name="nm" id="nm" onkeyup="nmValidate()">
+					<span id="s4"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Email Id:-
+				</td>
+				<td>
+					<input type="email" name="email" id="email" onkeyup="clr(s5)">
+					<span id="s5"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Password:-
+				</td>
+				<td>
+					<input type="password" name="pwd" id="pwd" onkeyup="pwdValidate()">
+					<button type="button" id="show" onclick="shw()">Show</button>
+					<button type="button" id="hide" onclick="hde()">Hide</button>
+					<span id="s6"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Confirm Password:-
+				</td>
+				<td>
+					<input type="password" name="cnf" id="cnf" onkeyup="cnfValidate()">
+					<span id="s7"></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" id="sub">
+				</td>
+			</tr>
+		</form>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="js.js"></script>
+</body>
+</html>

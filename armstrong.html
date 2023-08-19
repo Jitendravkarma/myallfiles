@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 30px;
+			text-align: center;
+			font-family: arial;
+		}
+	</style>
+	<script type="text/javascript">
+		let num = 371;
+		let a = parseInt(num/100);
+		let b = parseInt(num/10)%10;
+		let c = num%10;
+		// a *= a * a;
+		// b *= b * b; Lengthy work
+		// c *= c * c;
+		// let sum = a*a*a+b*b*b+c*c*c; Short work
+		let sum = Math.pow(a, 3)+Math.pow(b, 3)+Math.pow(c, 3); //Smart work
+		let check = (num == sum)? num+" is: - Armstrong number": num+" is: - Not armstrong number";
+		document.write(check);
+	</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

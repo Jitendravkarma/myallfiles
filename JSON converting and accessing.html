@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 30px;
+			font-family: arial;
+			margin: 10px;
+			font-weight: bold;
+		}
+	</style>
+	<script src="jquery-3.6.4.min.js"></script>
+	<script src="jquery.cycle.all.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	var aro = [
+		{'fname':'jitendra','lname':'karma'},
+		{'fname':'mukku','lname':'kachhaya'},
+		{'fname':'raj','lname':'masre'}
+	];
+	var obj = {'fname':'Jitendra','lname':'Vishwakarma'};
+	//converting object into string format
+	var json_obj = JSON.stringify(obj);
+	//converting string to object format
+	var obj_obj = JSON.parse(json_obj);
+	document.write('Simple object printing:- '+obj+'<br><br>');
+	document.write('Object printing in string format by JSON:- '+json_obj+'<br><br>');
+	document.write('Converting string into object:- '+obj_obj+'<br><br>');
+
+	//------------------access by map function-----------------
+	aro.map((obj)=>{
+		Object.keys(obj).map((k)=>{
+			document.write(obj[k]+' ');
+		});
+		document.write('<br>');
+
+	});
+	
+	//-----------------access by for of loop-------------------
+	// for(let obj of aro){
+	// 	for(let k in obj){
+	// 		document.write(obj[k]+' ');
+	// 	}
+	// 	document.write('<br>')
+	// }
+
+	//-----------------access by for in loop-------------------
+	// for(let obj in aro){
+	// 	for(let k in aro[obj]){
+	// 		document.write(aro[obj][k]+' ');
+	// 	}
+	// 	document.write('<br>')
+	// }
+
+	//-----------------access by for loop-------------------
+	// for(let i = 0; i < aro.length; i++){
+	// 	for(let j in aro[i]){
+	// 		document.write(aro[i][j]+' ');
+	// 	}
+	// 	document.write('<br>');
+	// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

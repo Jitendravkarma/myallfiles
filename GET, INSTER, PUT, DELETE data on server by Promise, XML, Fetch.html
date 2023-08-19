@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Use on Live server</title>
+</head>
+<body style="font-size: 17px">
+	<form id="formData">
+		Id:- <input type="text" id="id"/><br/>
+		Name:- <input type="text" id="name"/><br/>
+		Email:- <input type="text" id="email"/><br/>
+		Mobile:- <input type="text" id="mob"/><br/>
+		<button type="button" onclick="submitdata()">Click</button>
+	</form>
+	<script type="text/javascript">
+		//--------- Short method to inster data -------
+		//--Isse ye hoga ki each input ke liye alg se koi variable nhi banana pdega, formdata pure form ka data utha lega
+		function submitdata() {
+			var formdata = document.getElementById('formData');
+			fetch("https://jsonplaceholder.typicode.com/users", {
+				method : "POST",
+				body : new FormData(formData),
+				headers : {
+					'Content-type':'application/x-www-form-urlencoded'
+				}
+			}).then(response=>response.json()).then(res=>console.log(res)).catch(err=>console.log(`Data not instered!`));
+		}
+
+		//------------ Delete given input record from server by DELETE method ------------
+		// function submitdata() {
+		// 	var dt = document.getElementById('id').value;
+		// 	fetch('https://jsonplaceholder.typicode.com/posts/'+details, {
+		// 	  method: 'DELETE'
+		// 	}).then((response)=>response.json()).then((json)=>console.log(json));
+		// }
+
+		//--------- Update details Put method if you want to using addEventListner then remove onclick funtion---
+		// document.querySelector('button').addEventListener('click', function(){
+		// 	var userDetails = {
+		// 		id: document.getElementById('id').value,
+		// 		name: document.getElementById('name').value,
+		// 		email: document.getElementById('email').value,
+		// 		mob: document.getElementById('mob').value
+		// 	}
+		// 	fetch('https://jsonplaceholder.typicode.com/posts/'+userDetails.id, {
+		// 	  method: 'PUT',
+		// 	  body: JSON.stringify(userDetails),
+		// 	  headers: {
+		// 	    'Content-type': 'application/json; charset=UTF-8',
+		// 	  },
+		// 	}).then((response) => response.json()).then((json) => console.log(json));
+		// });
+			
+		
+
+		//------------Insert data on server by POST method----------------
+		// function submitdata(){
+		// 	var userDetails = {
+		// 		id: document.getElementById('id').value,
+		// 		name: document.getElementById('name').value,
+		// 		email: document.getElementById('email').value,
+		// 		mob: document.getElementById('mob').value
+		// 	}
+		// 	fetch("https://jsonplaceholder.typicode.com/users", {
+		// 		method : 'POST',
+		// 		body : JSON.stringify(userDetails),
+		// 		headers : {
+		// 			'Content-type':'application/json'
+		// 		}
+		// 	}).then(response=>response.json()).then(res=>console.log(res)).catch(err=>console.log(`Server not responding...`));
+		// }
+
+		//------------Very short method to Fetching data by usning Fetch method ------------------
+		// fetch('user.json').then(rs=>rs.json()).then(re=>console.log(re)).catch(er=>console.log(`Server not responding`));
+		
+		//------------Geting/Fetching data by usning Fetch method long way ------------------
+		// fetch('user.json').then((response)=>{
+		// 	return response.json();
+		// }).then((res)=>{
+		// 	res.map((obj)=>{
+		// 		document.write('<td>'+obj.id+'</td>');
+		// 	})
+		// }).catch((err)=>{
+		// 	console.log(err);
+		// });
+
+		//------------------Fetching data by using XMLHttpRequest() funtion------------
+		// let xhttp = new XMLHttpRequest();
+		// xhttp.onreadystatechange = function(){
+		// 	if (this.readyState === 4 && this.status === 200) {
+		// 		var store = JSON.parse(this.responseText);
+		// 		console.log(store);
+		// 	}
+		// 	else if (this.readyState === 4 && this.status === 404) {
+		// 		console.log(`<h1>404</h1>Page not found`);
+		// 	}
+		// }
+		// xhttp.open('get','user.json',true);
+		// xhttp.send();
+
+
+
+		// ----------Fetching data by using promise with jquery Get method--------------
+		// function getdata() {
+		// 	return new Promise((res, rej)=>{
+		// 		console.log(`Loading...`);
+		// 		setTimeout(()=>{
+		// 			$.get("user.json", (resp)=>{
+		// 				res(resp);
+		// 			}).fail(err => rej(`Fail to load data.`));
+		// 		}, 1000)
+		// 	});
+		// }
+		// getdata().then((res)=>{
+		// 	console.log(res);
+		// }).catch((er)=>{
+		// 	console.log(er);
+		// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+	<!-- <script src="jqueryAjax.js"></script>	 -->
+</body>
+</html>

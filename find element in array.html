@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 30px;
+			font-family: arial;
+			margin: 10px;
+			font-weight: bold;
+		}
+	</style>
+	<script src="jquery-3.6.4.min.js"></script>
+	<script src="jquery.cycle.all.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	var ary = [10, 20, 30, 40, 50, 60, 70, 80];
+	var f = 50;
+	var flag = 0;
+	var store = '';
+	for(let i in ary){
+		if (ary[i] === f) {
+			store += f+' is stored on '+ i+ ' index no';
+			flag = 1;
+		}
+	}
+	if (flag) {
+		document.write(store);
+	}
+	else {
+		document.write(f+ ' is not found')
+	}
+
+	
+
+
+
+
+
+
+
+
+	// var students = [
+	// 	{'fname':'Jitendra','marks':[50, 60, 90, 80, 75]},
+	// 	{'fname':'Mukesh','marks':[90, 80, 85, 70, 85]}
+	// ];
+	// var store = 0;
+	// var flag = 0;
+	// var name = prompt("Enter name");
+	// for(let i in students[0].marks){
+	// 	if (students[0].fname === name) {
+	// 		store += students[0].marks[i];
+	// 		var ave = store/5;
+	// 		flag = 1;
+	// 	}
+	// }
+	// for(let i in students[1].marks){
+	// 	if (students[1].fname === name) {
+	// 		store += students[1].marks[i];
+	// 		var ave = store/5;
+	// 		flag = 1;
+	// 	}
+	// }
+	// if (flag) {
+	// 	document.write(`${name} total marks is ${store} and percentage is ${ave}`);
+	// }
+	// else {
+	// 	document.write(`${name} name student is not in our data.`);
+	// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

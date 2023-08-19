@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	var last = 100;
+	var current = 145;
+	var t = current - last;
+	var amt = 0;
+	if (t <= 100) {
+		amt = t * 2;
+	}
+	else if (t <= 200) {
+		amt = 100 * 2 + (t-100) * 3;
+	}
+	else if (t <= 300) {
+		amt = 100 * 2 + 200 * 3 + (t-200) * 4;
+	}
+	else {
+		amt = 100 * 2 + 200 * 3 + 300 * 4 (t-300) * 5;
+	}
+	document.write(`<h1>Your electricity bill unit is ${t} and according \
+	to this your bill payble amount is :- ${amt}Rs</h1>`);
+</script>

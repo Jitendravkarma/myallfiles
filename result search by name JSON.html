@@ -1,0 +1,53 @@
+<script type="text/javascript">
+	var students = [
+		{'fname':'Raj','marks':[90, 90, 70, 60, 80]},
+		{'fname':'Ram','marks':[6, 50, 60, 80, 10]},
+		{'fname':'Shyam','marks':[65, 50, 6, 8, 10]},
+		{'fname':'John','marks':[75, 50, 90, 80, 90]},
+		{'fname':'Jarvis','marks':[30, 85, 60, 80, 101]}
+	];
+	var name = 'John';
+	var total = 0;
+	var s1 = '';
+	var s2 = '';
+	var flag = 0;
+	var f = 1;
+	students.map((obj)=>{
+		for(let i = 0; i < obj.marks.length; i++){
+			if (obj.fname == name) {
+				if (obj.marks[i] > 100) {
+					console.log(obj.fname+' marks is out of range update marks index no is '+ i);
+					f = 0;
+				}
+				total += obj.marks[i];
+				var ave = total/obj.marks.length;
+				if (ave < 33) {
+					s1 = obj.fname +' marks is '+total+' and percentage is ' +ave;
+					s2 = 'Failed';
+				}
+				else if (ave < 60) {
+					s1 = obj.fname +' marks is '+total+' and percentage is ' +ave;
+					s2 = 'Passed';
+				}
+				else if (ave < 80) {
+					s1 = obj.fname +' marks is '+total+' and percentage is ' +ave;
+					s2 = 'Passed with first division';
+				}
+				else if (ave <= 100) {
+					s1 = obj.fname +' marks is '+total+' and percentage is ' +ave;
+					s2 = obj.fname +' is in merit list';
+				}
+				flag = 1;
+			}
+		}
+	});
+	if (flag) {
+		if (f) {
+			console.log(s1);
+			console.log(s2);
+		}
+	}
+	else {
+		console.log(`${name} student is doesn't existing in our data.`);
+	}
+</script>

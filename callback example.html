@@ -1,0 +1,31 @@
+<script type="text/javascript">
+	function cal(a, b, gt) {
+		console.log('Detecting values...');
+		setTimeout(()=>{
+			gt(a, b, (add, sub, mul, div)=>{
+				console.log('Calculation is under processing...');
+				setTimeout(()=>{
+					add();
+					sub();
+					mul();
+					div();
+				}, 2000);
+			});
+		}, 800)
+	}
+	cal(10, 5,(a, b, cl)=>{
+		console.log('a = '+ a);
+		console.log('b = '+ b);
+		setTimeout(()=>{
+			cl(()=>{
+				console.log('a + b = '+ (a + b));
+			}, ()=>{
+				console.log('a - b = '+ (a - b));
+			}, ()=>{
+				console.log('a * b = '+ (a * b));
+			}, ()=>{
+				console.log('a / b = '+ (a / b));
+			});
+		}, 800);
+	});
+</script>

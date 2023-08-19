@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+			font-size: 18px;
+		}
+		span {
+			color: red;
+		}
+		input {
+			margin: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		function chk() {
+			let a, b, c, d, z = true;
+			a = document.getElementById('q1');
+			b = document.getElementById('q2');
+			c = document.getElementById('q3');
+			d = document.getElementById('q4');
+			if (!(a.checked || b.checked || c.checked || d.checked)) {
+				z = false;
+				document.getElementById('s').innerHTML = "Please select any answer";
+			}
+			if (a.checked) {
+				z = false;
+				document.getElementById('s').innerHTML = "5 is incurrect ans";
+			}
+			if (b.checked) {
+				z = false;
+				document.getElementById('s').innerHTML = "15 is incurrect ans";
+			}
+			if (c.checked) {
+				document.getElementById('s').innerHTML = "currect ans";
+			}
+			if (d.checked) {
+				z = false;
+				document.getElementById('s').innerHTML = "-10 is incurrect ans";
+			}
+			return z;
+		}
+	</script>
+</head>
+<body>
+	<form onsubmit="return chk()" action="https://web.whatsapp.com/">
+		<label>Q.1 What is the output of 5 + 5 = ?</label><br>
+		<input type="radio" name="q1" id="q1"> 5
+		<input type="radio" name="q1" id="q2"> 15
+		<input type="radio" name="q1" id="q3"> 10
+		<input type="radio" name="q1" id="q4"> -10 <span id="s"></span><br>
+		<input type="submit">
+	</form>
+
+	<script src="js.js"></script>
+</body>
+</html>

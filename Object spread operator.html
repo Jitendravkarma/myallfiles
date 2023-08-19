@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	var obj1 = {'fname':'Jitendra','lname':'Vishwakarma'};
+	var obj2 = {'gender':'male','age': 22, 'sal': 20};
+	var con = {...obj1,...obj2};
+	//---------single line code--------- 
+	//obj = {...obj, 'age': 22, 'gender':'male','sal': 20000};
+	for(let i in con){
+		document.write(i+'---> '+con[i]+'<br>');
+	}
+</script>

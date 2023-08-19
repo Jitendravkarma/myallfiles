@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice JS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body style="font-size: 17px">
+	<script type="text/javascript">
+		//-------------------------- Multiple promises in short way
+		function profun(msg, num) {
+			return (res, rej)=>{
+				setTimeout(()=>{
+					console.log(`${msg} promise called!`);
+					res(num);
+				}, num * 100);
+			}
+		}
+		let p1 = new Promise(profun('First', 10));
+		let p2 = new Promise(profun('Second', 20));
+		let p3 = new Promise(profun('Third', 30));
+		// let p1 = new Promise(profun('First', 10));
+		Promise.all([p1, p2, p3]).then((res)=>{
+			console.log(res);
+		}).catch((err)=>{
+			console.log(err)
+		})
+
+
+		// --------------------Multiple promise in long way
+		// let p1 = new Promise((res, rej)=>{
+		// 	setTimeout(()=>{
+		// 		console.log('First promise is called');
+		// 		res(10);
+		// 	}, 1000)
+		// });
+		// let p2 = new Promise((res, rej)=>{
+		// 	setTimeout(()=>{
+		// 		console.log('Second promise is called');
+		// 		res(20);
+		// 	}, 2000)
+		// });
+		// let p3 = new Promise((res, rej)=>{
+		// 	setTimeout(()=>{
+		// 		console.log('Third promise is called');
+		// 		res(30);
+		// 	}, 3000)
+		// });
+		// Promise.all([p1, p2, p3]).then((res)=>{
+		// 	console.log(res);
+		// }).catch((err)=>{
+		// 	console.log(err)
+		// })
+
+		// --------------Single promise called
+		// let check = 3;
+		// function pro() {
+		// 	return new Promise((res, rej)=>{
+		// 		console.log(`Single Promise called`);
+		// 		setTimeout(()=>{
+		// 			if (check%2===0) {
+		// 				res(`${check} is Even number`);
+		// 			}
+		// 			else {
+		// 				rej(`${check} is Odd number`);
+		// 			}
+		// 		}, 1000);
+		// 	});
+		// }
+		// pro().then((res)=>{
+		// 	console.log(res);
+		// }).catch((err)=>{
+		// 	console.log(err);
+		// })
+
+
+		//---------------FAKE JSON DATA ACCESSING
+		// function pr() {
+		// 	return new Promise((res, rej)=>{
+		// 		$.get('https://jsonplaceholder.typicode.com/users',function(data){
+		// 			res(data);
+		// 		});
+		// 	});
+		// }
+		// pr().then((res)=>{
+		// 	console.log(res);
+		// }).catch((err)=>{
+		// 	console.log(err);
+		// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+	
+	<p id="demo"></p>
+</body>
+</html>

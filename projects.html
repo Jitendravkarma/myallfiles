@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Practice</title>
+	<script>
+		// First project
+		function first() {
+			var a = parseInt(document.getElementById('i1').value);
+			for(var i = 1; i <= a; i++){
+				document.write(i + "<br>");
+			}
+		}
+
+		// Second project
+		function second() {
+			var b = parseInt(document.getElementById('i2').value);
+			var c = parseInt(document.getElementById('i3').value);
+			if (b > c) {
+				alert("B is not be greather from C");
+			}
+			for(var i = b; i <= c; i++){
+				document.write(i +"<br>");
+			}
+		}
+
+		// Third project
+		function third() {
+			sum = 0;
+			for(var i = 1; i <= 10; i++){
+				sum+=i;
+			}
+			document.write(sum);
+		}
+
+		// Fourth project
+		function fourth() {
+			var e = parseInt(document.getElementById('i5').value);
+			var f = parseInt(document.getElementById('i6').value);
+			for (var i = e; i <= f; i++){
+				if (i%2 == 0) {
+					document.write(i +'<br>');
+				}
+			}
+		}
+
+		// Fifth project
+		function fifth() {
+			var g = parseInt(document.getElementById('i7').value);
+			var h = parseInt(document.getElementById('i8').value);
+			for (var i = g; i <= h; i++){
+				if (i%2 != 0) {
+					document.write(i +'<br>');
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+<center>
+	First Project: - Give any value<br><br>
+	<input type="text" id="i1"><br><br>
+	<button type="button" onclick="first()">Count</button><br><br><br>
+	Second Project: - Give two values<br><br>
+	<input type="text" id="i2"><br><br>
+	<input type="text" id="i3"><br><br>
+	<button type="button" onclick="second()">Count</button><br><br><br>
+	Third Project: - Sum of Value<br><br>
+	<input type="text" id="i4" disabled placeholder="Click and see sum of 1 to 10"><br><br><br>
+	<button type="button" onclick="third()">Add</button><br><br><br>
+	Fourth Project: - Find Even Number<br><br>
+	<input type="text" id="i5"><br><br>
+	<input type="text" id="i6"><br><br>
+	<button type="button" onclick="fourth()">Find Even</button><br><br><br>
+	Fifth Project: - Find Odd Number<br><br>
+	<input type="text" id="i7"><br><br>
+	<input type="text" id="i8"><br><br>
+	<button type="button" onclick="fifth()">Find Odd</button><br><br><br>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

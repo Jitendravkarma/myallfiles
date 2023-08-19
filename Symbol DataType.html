@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Use on Live server</title>
+	<script src="jqueryAjax.js"></script>
+</head>
+<body style="font-size: 17px">
+	<!-- <form id="formData">
+		Id:- <input type="text" id="id" autofocus/><br/>
+		Name:- <input type="text" id="name"/><br/>
+		Email:- <input type="text" id="email"/><br/>
+		Mobile:- <input type="text" id="mob"/><br/>
+		<button type="button" onclick="submitdata()">Click</button>
+	</form> -->
+	<script type="text/javascript">
+		//------------------Symbol DataType-----------------
+		var lname = Symbol('last');
+		var age = Symbol('age');
+		var obj = {
+			name : "Jitendra",
+			[age.description] : 22
+		}
+		obj[lname.description] = 'Karma';
+		Object.keys(obj).map(x=>console.log(x+'--> '+obj[x]));
+
+
+
+		//------------------Symbol DataType-----------------
+		// var age = Symbol('age'); //Symbol ke under jo bhi likha hai is not string this is description of Symbol
+		// // var b = name.description; //Now you can use symbol description as a String
+		// //How to use symbol on object
+		// var obj = {
+		// 	name : 'Jitendra',
+		// 	[age.description] : 22			//Convert symbol into object key
+		// }
+		// // obj[age] = 22 //Also add outer format
+
+		// // console.log(obj[age]) //Calling of symbol value don't use dot notation
+
+		// for(let i in obj){
+		// 	console.log(obj[i])
+		// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

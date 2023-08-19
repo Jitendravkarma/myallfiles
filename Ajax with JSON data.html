@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice JS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body style="font-size: 17px">
+	<!-- <button onclick="handleclick()">Click</button> -->
+	<script type="text/javascript">
+		// --------------------You can also use this on with any Event
+		// function handleclick() {
+			let xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState === 4 && this.status === 200) {
+					var json = JSON.parse(this.responseText);
+					document.write('<table border=1 cellspacing=0 cellpadding=10>');
+					document.write('<tr>');
+					document.write('<th>User Id</th>');
+					document.write('<th>Username</th>');
+					document.write('<th>Name</th>');
+					document.write('<th>Email</th>');
+					document.write('<th>Phone</th>');
+					document.write('<th>Address</th>');
+					document.write('</tr>');
+					json.map((obj)=>{
+						document.write('<tr>');
+						document.write('<td>'+obj.id+'</td>');
+						document.write('<td>'+obj.username+'</td>');
+						document.write('<td>'+obj.name+'</td>');
+						document.write('<td>'+obj.email+'</td>');
+						document.write('<td>'+obj.phone+'</td>');
+						document.write('<td>'+obj.website+'</td>');
+						document.write('</tr>');
+					});
+				}
+				else if (this.readyState === 4 && this.status === 404) {
+					document.write(`<h1>File record not found</h1>`);
+				}
+			}
+			xhttp.open('GET','https://jsonplaceholder.typicode.com/users',true);
+			xhttp.send();
+		// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+	
+	<p id="demo"></p>
+</body>
+</html>

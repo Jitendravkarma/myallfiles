@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jqueryAjax.js"></script>
+	<style type="text/css">
+		body {
+			background-color: gray;
+			color: white;
+		}
+		*{
+			/*box-sizing: border-box;*/
+		}
+		.parent {
+			width: 200px;
+			height: 200px;
+			border-radius: 10px;
+			position: relative;
+			perspective: 800px;
+		}
+		.card {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			transition: .6s;
+			transform-style: preserve-3d;
+		}
+		.white, .black {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+			text-align: center;
+			line-height: 200px;
+			font-size: 40px;
+			font-family: arial;
+			backface-visibility: hidden;
+		}
+		.card:hover {
+			transform: rotateY(180deg);
+		}
+		.white {
+			background-color: white;
+			color: black;
+			transform: rotateY(180deg);
+		}
+		.black {
+			background-color: black;
+			color: white;	
+		}
+	</style>
+</head>
+<body style="font-size: 17px">
+	<div class="parent">
+		<div class="card">
+			<div class="white">
+				White
+			</div>
+			<div class="black">
+				Black
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

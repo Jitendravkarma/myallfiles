@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//How to store array values in seperate variable
+		let ar = [10, 200, 30];
+		let [first, second=20, third] = ar; 
+		document.write('Array Var: - '+second+'<br>');
+
+		//How to store object values in seperate variable
+		let ob = {fname: 'Jitendra', lname:'Karma',age : 22};
+		let {fname, lname, age: a} = ob; // You can use short name example (age is now a);
+		document.write('Object Var: - '+fname+'<br>');
+		document.write('Object Var with short var: - '+a+'<br>');
+
+		//You can also use default value
+		let ary = [10, , 30];
+		let [f, s=20, t] = ary; //You can also use default value
+		document.write('Detault Value: - '+s+'<br>');
+
+		//Array Object combination
+		let ary1 = ['Jitendra','Karma', 23,['santsoh','rukhmani'], {tw:20, th:30, fr:40}];
+		let [name, ltname, sage, [father, mother], {tw, th, fr}]= ary1;
+		document.write('Array combination: - '+th+'<br>')
+		document.write('Object combination: - '+father+'<br>')
+
+		//Apply with function
+		function arry([firstname, lastname, age=17]) {
+			document.write(`Apply with function: - ${firstname} ${lastname} ${age}<br>`);
+		}
+		arry(['Jitendra','Karma',]);
+
+		//With return
+		function array() {
+			return ['Sacin','Karma',30];
+		}
+		let new_ary = [bname, blname, bage] = array();
+		document.write(`With Return concept: - ${bname} ${blname}`)
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice JS</title>
+</head>
+<body style="font-size: 17px">
+	<script type="text/javascript">
+		class emp{
+			constructor(name, age, salary){
+				this.fname = name;
+				this.age = age;
+				this.salary = salary;
+			}
+			show(){
+				document.write(`<h2>Employee</h2> Name:- ${this.fname} <br> Age:- ${this.age} <br> Salary:- ${this.salary}`);
+			}
+		}
+		class manager extends emp{
+			show(){
+				this.ta = 200;
+				this.da = 500;
+				this.pf = 1000;
+				this.total = this.ta + this.da + this.pf + this.salary;
+				document.write(`<h2>Manager</h2> Name:- ${this.fname} <br> Age:- ${this.age} <br> Salary:- ${this.total}`);
+			}
+		}
+		var em = new emp('Jitendra', 22, 20000);
+		var mn = new manager('Sachin', 28, 30000);
+		em.show();
+		mn.show();
+	</script>
+	<p id="demo"></p>
+</body>
+</html>
